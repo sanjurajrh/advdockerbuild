@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.0
 ENV DOCROOT=/var/www/html
-RUN yum install -y httpd --no-docs && yum clean all -y && \
+RUN yum install -y httpd --nodocs && yum clean all -y && \
     echo "IT WORKS" > ${DOCROOT}/index.html
 ONBUILD COPY src/ ${DOCROOT}/
 EXPOSE 80
